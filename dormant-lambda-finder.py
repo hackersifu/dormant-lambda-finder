@@ -2,7 +2,28 @@ import boto3
 from datetime import datetime
 
 # List of regions. Recommend to modify.
-region_list = ['us-east-1', 'us-east-2', 'us-west-1', 'us-west-2']
+region_list = [
+    'af-south-1',
+    'ap-east-1',
+    'ap-northeast-1',
+    'ap-northeast-2',
+    'ap-south-1',
+    'ap-southeast-1',
+    'ap-southeast-2',
+    'ca-central-1',
+    'eu-central-1',
+    'eu-north-1',
+    'eu-west-1',
+    'eu-west-2',
+    'eu-west-3',
+    'me-south-1',
+    'sa-east-1',
+    'us-east-1',
+    'us-east-2',
+    'us-west-1',
+    'us-west-2'
+]
+
 
 def get_lambda_first_invocation_time(function_name, aws_region, lookback_days):
     """Function to get the last invocation time for each Lambda function."""
@@ -26,6 +47,7 @@ def get_lambda_first_invocation_time(function_name, aws_region, lookback_days):
     except logs_client.exceptions.ResourceNotFoundException:
         return "No logs available"
 
+
 def list_lambda_functions(aws_region, lookback_days):
     """Function to list all Lambda functions."""
     lambda_client = boto3.client('lambda', region_name=aws_region)
@@ -45,6 +67,7 @@ def list_lambda_functions(aws_region, lookback_days):
             })
     
     return lambda_functions
+
 
 def main():
     """Main function to run subsequent functions."""
