@@ -1,11 +1,11 @@
-# Dormant Lambda Checker
+# Dormant Lambda Finder
 
-`dormant-lambda-checker.py` is a Python script designed to help identify AWS Lambda functions that have not been invoked within a specified time frame. This can assist in identifying potentially dormant, unused, or legacy Lambda functions, allowing you to clean up or manage your AWS resources efficiently.
+`dormant-lambda-finder.py` is a Python script designed to help identify AWS Lambda functions that have not been invoked within a specified time frame. This can assist in identifying potentially dormant, unused, or legacy Lambda functions, allowing you to clean up or manage your AWS resources efficiently.
 
 ---
 
 ## Use Case
-The Dormant Lambda Checker is ideal for:
+The Dormant Lambda Finder is ideal for:
 - **Identifying unused resources**: Find Lambda functions that haven't been invoked recently and may no longer be needed.
 - **Cost optimization**: Detect dormant Lambda functions to reduce unnecessary costs.
 - **Operational management**: Maintain visibility over function usage in multiple AWS regions.
@@ -19,13 +19,13 @@ The Dormant Lambda Checker is ideal for:
    - Ensure AWS credentials are configured (e.g., using `aws configure`).
 
 2. **Setup**:
-   - Clone or download the script `dormant-lambda-checker.py`.
+   - Clone or download the script `dormant-lambda-finder.py`.
    - Open the script and update the `region_list` variable to include the AWS regions you want to check.
 
 3. **Run the Script**:
    - Execute the script in your terminal:
      ```bash
-     python dormant-lambda-checker.py
+     python dormant-lambda-finder.py
      ```
    - When prompted, enter the number of days to look back for Lambda invocations. Press Enter to use the default value (30 days).
 
@@ -38,7 +38,7 @@ The Dormant Lambda Checker is ideal for:
 ---
 
 ## Permissions Required
-To run the Dormant Lambda Checker, the following AWS permissions are required:
+To run the Dormant Lambda Finder, the following AWS permissions are required:
 - **Lambda Permissions**:
   - `lambda:ListFunctions` (to list all Lambda functions in the region).
 - **CloudWatch Logs Permissions**:
@@ -50,5 +50,5 @@ Ensure these permissions are included in the IAM role or user account running th
 ---
 
 ## Feedback
-I welcome feedback to improve the Dormant Lambda Checker! If you encounter issues or have feature requests, open an issue or submit a pull request on the repository.
+I welcome feedback to improve the Dormant Lambda Finder! If you encounter issues or have feature requests, open an issue or submit a pull request on the repository.
 
